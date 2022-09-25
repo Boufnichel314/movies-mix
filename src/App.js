@@ -1,9 +1,15 @@
+import Header from "./Components/Header/Header";
 import "./App.css";
+import SimpleBottomNavigation from "./Components/BottomNav";
  const App = () =>{
   return (
-    <div className="Container">
-     
+    <>
+    <Header/>
+      <div className="App">
+
     </div>
+    <SimpleBottomNavigation/>
+    </>
   );
 }
 
