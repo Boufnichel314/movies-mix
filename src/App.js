@@ -1,15 +1,29 @@
 import Header from "./Components/Header/Header";
 import "./App.css";
 import SimpleBottomNavigation from "./Components/BottomNav";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Container } from "@mui/system";
+import Trending from "./Pages/Trending";
+import Movies from "./Pages/Movies";
+import Search from "./Pages/Search";
+import Series from "./Pages/Series";
  const App = () =>{
   return (
-    <>
+    <BrowserRouter>
     <Header/>
       <div className="App">
-
+      <Container>
+      <Routes>
+        <Route path="/" element={<Trending/>} exact/>
+        <Route path="/movies" element={<Movies/>}/>
+        <Route path="/series" element={<Series/>}/>
+        <Route path="/search" element={<Search/>}/>
+      </Routes>
+      </Container>      
     </div>
     <SimpleBottomNavigation/>
-    </>
+
+    </BrowserRouter>
   );
 }
 
