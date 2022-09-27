@@ -12,7 +12,7 @@ import Series from "./Pages/Series";
     <BrowserRouter>
     <Header/>
       <div className="App">
-      <Container>
+      <Container maxWidth>
       <Routes>
         <Route path="/" element={<Trending/>} exact/>
         <Route path="/movies" element={<Movies/>}/>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-
+import TrendingItem from '../Components/TrendingItem'
+import './trending.css'
 export default function Trending() {
   const [trending, setTrending] = useState([])
   const fetchTrending = async () => {
@@ -15,10 +16,19 @@ useEffect(
   }, [])
   return (
     <div>
-      <span className='pageTitle'>Trending</span>
+    <div className="spantitle">
+    <span className="pageTitle">Trending</span>
+    </div>
       <div className='trending'>
         { trending && trending.map((t) => (
-          console.log(t)
+          <TrendingItem 
+            title = {t.title || t.name} 
+            id = {t.id} 
+            poster = {t.poster_path} 
+            date = {t.first_air_date || t.release_date} 
+            media_type = {t.media_type} 
+            vote_average = {t.vote_average}
+          />
         ))}
         </div>
     </div>

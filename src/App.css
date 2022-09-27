@@ -1,6 +1,6 @@
 .App{
     min-height: 100vh;
-    background-color: #39445a;
+    background-color: #000000;
     color: white;
     padding-top: 130px;
     padding-bottom: 70px;
@@ -10,5 +10,52 @@
 @media (max-width:700px) {
     .App{
         padding-top: 70px;
+    }
+}
+.spantitle{
+    position: relative;
+}
+.pageTitle{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2vw;
+    padding: 4px ;
+    border-radius: 50px;
+    color: white;
+}
+.pageTitle:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 40%;
+    height: 3px;
+    background-color: #BB9F1F;
+    z-index: 10000;
+    border-radius: 50px;
+}
+.pageTitle:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 40%;
+    height: 3px;
+    background-color: #BB9F1F;
+    z-index: 10000;
+    border-radius: 50px;
+}
+
+@media (max-width:1000px) {
+    .pageTitle{
+        font-size: 6vw;
+    }
+    .pageTitle:before{
+        width: 30%;
+    }
+    .pageTitle:after{
+        width: 30%;
     }
 }

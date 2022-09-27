@@ -7,6 +7,7 @@ import TvIcon from '@mui/icons-material/Tv';
 import SearchIcon from '@mui/icons-material/Search';
 import MovieIcon from '@mui/icons-material/Movie';
 import { useNavigate} from 'react-router-dom';
+import './bottomNav.css'
 export default function SimpleBottomNavigation() {
   const [value, setValue] = useState(0);
   const navigate = useNavigate();
@@ -17,14 +18,14 @@ export default function SimpleBottomNavigation() {
     if(value === 3) navigate("/search");
   }, [value]);
   return (
-    <Box sx={{ 
+    <Box className='box' sx={{ 
       width: "100%" , 
       position: 'fixed', 
       bottom: 0,
       zIndex : 100,
       }}>
       <BottomNavigation
-        style={{backgroundColor: '#39555a'}}
+        style={{backgroundColor: '#bb861f'}}
         showLabels
         value={value}
         onChange={(event, newValue) => {
