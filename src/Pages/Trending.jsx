@@ -1,19 +1,25 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import MovingPagination from '../Components/MovingPagination'
 import TrendingItem from '../Components/TrendingItem'
 import './trending.css'
 export default function Trending() {
-  const [trending, setTrending] = useState([])
+  const [trending, setTrending] = useState([]);
+  const [page, setPage] = useState(1); //default 1
+  const [pageNbr, setPageNbr] = useState(10); //default 10
   const fetchTrending = async () => {
-    const {data} = await axios.get('https://api.themoviedb.org/3/trending/all/day?api_key=6505633048f5502e5be2af8e438f76df', {
+    const {data} = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=6505633048f5502e5be2af8e438f76df&page=${page}`, {
   } )
-    console.log(data.results);
     setTrending(data.results);
 }
 useEffect(
   () => {
     fetchTrending();
-  }, [])
+    console.log(pageNbr);
+    setPageNbr(
+      prev => prev + 2 //i wil update it everytime i render by stack
+    )
+  }, [page])
   return (
     <div>
     <div className="spantitle">
@@ -31,6 +37,7 @@ useEffect(
           />
         ))}
         </div>
+        <MovingPagination setPage={setPage}  Nbr = {pageNbr}/>
     </div>
   )
 }

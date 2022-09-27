@@ -1,5 +1,11 @@
 import React from 'react'
 import "./header.css"
 export default function Header() {
-  return <span className='header'>Moroccan Mix</span>
+  return(
+    <div className='header'>
+      <div className="header_img">
+      </div>
+      <span className='header_span'>Moroccan Mix</span>
+    </div>
+  );
 }

@@ -7,6 +7,7 @@ import Trending from "./Pages/Trending";
 import Movies from "./Pages/Movies";
 import Search from "./Pages/Search";
 import Series from "./Pages/Series";
+import Shows from "./Pages/Shows";
  const App = () =>{
   return (
     <BrowserRouter>
@@ -17,7 +18,7 @@ import Series from "./Pages/Series";
         <Route path="/" element={<Trending/>} exact/>
         <Route path="/movies" element={<Movies/>}/>
         <Route path="/series" element={<Series/>}/>
-        <Route path="/search" element={<Search/>}/>
+        <Route path="/shows" element={<Shows/>}/>
       </Routes>
       </Container>      
     </div>

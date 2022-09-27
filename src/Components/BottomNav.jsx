@@ -6,6 +6,7 @@ import WhatshotIcon from '@mui/icons-material/Whatshot';
 import TvIcon from '@mui/icons-material/Tv';
 import SearchIcon from '@mui/icons-material/Search';
 import MovieIcon from '@mui/icons-material/Movie';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
 import { useNavigate} from 'react-router-dom';
 import './bottomNav.css'
 export default function SimpleBottomNavigation() {
@@ -15,7 +16,7 @@ export default function SimpleBottomNavigation() {
     if(value === 0) navigate("/");
     if(value === 1) navigate("/movies");
     if(value === 2) navigate("/series");
-    if(value === 3) navigate("/search");
+    if(value === 3) navigate("/shows");
   }, [value]);
   return (
     <Box className='box' sx={{ 
@@ -35,7 +36,7 @@ export default function SimpleBottomNavigation() {
         <BottomNavigationAction style={{color: 'white'}}  label="Trending" icon={<WhatshotIcon />} />
         <BottomNavigationAction style={{color: 'white'}}  label="Movies" icon={<MovieIcon />} />
         <BottomNavigationAction style={{color: 'white'}}  label="Serie" icon={<TvIcon />} />
-        <BottomNavigationAction style={{color: 'white'}}  label="Search" icon={<SearchIcon />} />
+        <BottomNavigationAction style={{color: 'white'}}  label="shows" icon={<LiveTvIcon />} />
       </BottomNavigation>
     </Box>
   );
